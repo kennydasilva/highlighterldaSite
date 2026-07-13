@@ -8,7 +8,7 @@ import {
   Phone,
 } from "lucide-react";
 
-import { BrandMark } from "@/components/BrandMark";
+import highlighterLogo from "@/assets/imagens/logo/HIGHLIGHTER-LOGO.png";
 
 export function Footer() {
   return (
@@ -17,9 +17,14 @@ export function Footer() {
       <div className="container mx-auto px-4 relative">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-1">
-            <h3 className="flex items-center gap-2 font-display font-bold text-xl mb-4">
-              <BrandMark light className="h-9 w-9" />
-              Highlighter
+            <h3 className="mb-4">
+              {/* filtro para branco sólido: o logo original é azul/cinza e
+                  ficaria pouco legível em cima do novo fundo azul do rodapé */}
+              <img
+                src={highlighterLogo}
+                alt="Highlighter Group"
+                className="h-10 w-auto brightness-0 invert"
+              />
             </h3>
             <p className="text-white/70 text-sm leading-relaxed">
               Empresa moçambicana com mais de 13 anos em logística integrada e
