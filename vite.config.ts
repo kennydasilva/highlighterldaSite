@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Outside the Lovable sandbox the deploy plugin is off by default, so pin
+  // the Vercel preset explicitly to get a proper .vercel/output on build.
+  nitro: { preset: "vercel" },
 });
