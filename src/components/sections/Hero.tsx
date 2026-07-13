@@ -1,10 +1,15 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Network, ShieldCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import heroLocomotiveLift from "@/assets/imagens/hero-locomotive-lift.jpg";
 import { Counter } from "@/components/Counter";
 import { Tilt } from "@/components/Tilt";
+import {
+  HelmetIcon,
+  RouteNetworkIcon,
+  TruckIcon,
+} from "@/components/icons/LogisticsIcons";
 import { PREMIUM_EASE } from "@/lib/motion-variants";
 
 export function Hero() {
@@ -21,11 +26,6 @@ export function Hero() {
       id="top"
       className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden"
     >
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-grid opacity-60" />
-      <div className="absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-brand/20 blur-3xl" />
-      <div className="absolute -bottom-40 -right-20 h-[500px] w-[500px] rounded-full bg-brand/30 blur-3xl" />
-
       <div className="container mx-auto px-4 relative">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6">
@@ -135,7 +135,7 @@ export function Hero() {
                 >
                   <div className="flex items-center gap-3">
                     <div className="h-10 w-10 rounded-xl bg-hero-gradient text-white flex items-center justify-center">
-                      <ShieldCheck className="h-5 w-5" />
+                      <HelmetIcon className="h-5 w-5" />
                     </div>
                     <div>
                       <div className="text-xs text-muted-foreground">
@@ -157,7 +157,8 @@ export function Hero() {
                   className="absolute bottom-6 right-6 glass rounded-2xl p-4 shadow-soft-brand"
                   style={{ transform: "translateZ(80px)" }}
                 >
-                  <div className="text-xs text-muted-foreground">
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <TruckIcon className="h-4 w-4 text-brand" />
                     Entregas no prazo
                   </div>
                   <div className="text-2xl font-bold text-brand-deep">
@@ -184,7 +185,7 @@ export function Hero() {
                   style={{ transform: "translateZ(40px)" }}
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-brand-deep">
-                    <Network className="h-4 w-4 text-brand" />
+                    <RouteNetworkIcon className="h-4 w-4 text-brand" />
                     Rede SADC activa
                   </div>
                 </motion.div>

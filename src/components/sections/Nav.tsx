@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 
-import { BrandMark } from "@/components/BrandMark";
+import highlighterLogo from "@/assets/imagens/logo/HIGHLIGHTER-LOGO.png";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -32,14 +32,12 @@ export function Nav() {
             scrolled ? "glass shadow-soft-brand" : "bg-transparent"
           }`}
         >
-          <a
-            href="#top"
-            className="group flex items-center gap-2 font-display font-bold text-lg"
-          >
-            <BrandMark className="h-9 w-9" />
-            <span className="text-brand-deep">
-              High<span className="text-brand">lighter</span>
-            </span>
+          <a href="#top" className="group flex items-center">
+            <img
+              src={highlighterLogo}
+              alt="Highlighter Group"
+              className="h-10 w-auto transition-transform duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] group-hover:scale-105"
+            />
           </a>
           <nav className="hidden lg:flex items-center gap-1">
             {links.map(([l, h]) => (
