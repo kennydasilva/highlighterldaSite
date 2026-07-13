@@ -130,7 +130,7 @@ export function Hero() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="absolute top-6 left-6 glass rounded-2xl p-4 shadow-soft-brand"
+                  className="absolute top-6 left-6 bg-white/90 backdrop-blur-xl rounded-2xl p-4 shadow-soft-brand"
                   style={{ transform: "translateZ(60px)" }}
                 >
                   <div className="flex items-center gap-3">
@@ -154,7 +154,7 @@ export function Hero() {
                     ease: "easeInOut",
                     delay: 1,
                   }}
-                  className="absolute bottom-6 right-6 glass rounded-2xl p-4 shadow-soft-brand"
+                  className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-xl rounded-2xl p-4 shadow-soft-brand"
                   style={{ transform: "translateZ(80px)" }}
                 >
                   <div className="flex items-center gap-2 text-xs text-muted-foreground">
@@ -181,7 +181,7 @@ export function Hero() {
                     repeat: Infinity,
                     ease: "easeInOut",
                   }}
-                  className="absolute bottom-32 left-6 glass rounded-2xl px-4 py-3 shadow-soft-brand"
+                  className="absolute bottom-32 left-6 bg-white/90 backdrop-blur-xl rounded-2xl px-4 py-3 shadow-soft-brand"
                   style={{ transform: "translateZ(40px)" }}
                 >
                   <div className="flex items-center gap-2 text-xs font-semibold text-brand-deep">
