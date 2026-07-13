@@ -58,12 +58,6 @@
   --brand-light: oklch(
     0.7772 0.1018 248.84
   ); /* #82BCF5 — extremo claro do gradiente de botões da marketing */
-  --service-card-from: oklch(
-    0.5024 0.1168 251.9
-  ); /* #2A66A4 — topo do gradiente dos cards de Serviços */
-  --service-card-to: oklch(
-    0.3094 0.062 249.1
-  ); /* #14324E — base do gradiente dos cards de Serviços */
 
   --background: oklch(1 0 0);
   --foreground: var(--brand-deep);
@@ -91,10 +85,12 @@
     var(--brand) 0%,
     var(--brand-light) 100%
   );
+  /* Mesmo token --brand do botão "Solicitar Cotação" (#2E75BB), nunca uma cor
+     nova — a variação mais escura usa --brand-deep, já definido acima. */
   --gradient-service-card: linear-gradient(
     160deg,
-    var(--service-card-from) 0%,
-    var(--service-card-to) 100%
+    var(--brand) 0%,
+    var(--brand-deep) 100%
   );
   --gradient-soft: linear-gradient(
     180deg,
