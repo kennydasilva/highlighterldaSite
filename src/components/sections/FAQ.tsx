@@ -14,8 +14,8 @@ export function FAQ() {
             <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-brand-deep uppercase tracking-wider mb-4">
               FAQ
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-              Perguntas <span className="text-gradient-brand">Frequentes</span>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand">
+              Perguntas Frequentes
             </h2>
             <p className="mt-4 text-muted-foreground">
               Informações importantes sobre as nossas operações logísticas,

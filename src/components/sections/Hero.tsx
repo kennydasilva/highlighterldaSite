@@ -1,13 +1,23 @@
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Network, ShieldCheck } from "lucide-react";
 
 import heroLocomotiveLift from "@/assets/imagens/hero-locomotive-lift.jpg";
 import { Counter } from "@/components/Counter";
 import { Tilt } from "@/components/Tilt";
+import { PREMIUM_EASE } from "@/lib/motion-variants";
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const parallaxY = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
+
   return (
     <section
+      ref={sectionRef}
       id="top"
       className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden"
     >
@@ -35,41 +45,38 @@ export function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight"
+              transition={{ duration: 0.7, delay: 0.1, ease: PREMIUM_EASE }}
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-brand uppercase"
             >
-              Logística que <br />
-              <span className="text-gradient-brand">move o mundo</span> <br />
-              com precisão.
+              "Soluções inteligentes <br />
+              para grandes operações"
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
+              transition={{ duration: 0.6, delay: 0.25, ease: PREMIUM_EASE }}
               className="mt-6 text-lg text-muted-foreground max-w-xl"
             >
-              Soluções integradas em operações ferroportuárias, estiva,
-              fornecimento de minérios e mão-de-obra industrial — com segurança,
-              eficiência e visão global.
+              Logística, Serviços Ferro-Portuários e Soluções Industriais.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: PREMIUM_EASE }}
               className="mt-8 flex flex-wrap items-center gap-4"
             >
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-3 rounded-xl bg-hero-gradient text-white px-7 py-4 font-semibold shadow-glow-brand hover:shadow-elevate transition-all"
+                className="group inline-flex items-center gap-3 rounded-full bg-hero-gradient text-white px-7 py-4 font-semibold shadow-glow-brand transition-all hover:scale-105 hover:shadow-elevate"
               >
                 Solicitar Cotação
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 rounded-xl border-2 border-brand-deep/15 px-7 py-4 font-semibold text-brand-deep hover:bg-brand-ice transition-colors"
+                className="inline-flex items-center gap-2 rounded-full border-2 border-brand-deep/15 px-7 py-4 font-semibold text-brand-deep transition-all hover:scale-105 hover:bg-brand-ice"
               >
                 Ver Serviços
               </a>
@@ -87,7 +94,7 @@ export function Hero() {
                 ["50+", "Especialistas"],
               ].map(([n, l]) => (
                 <div key={l}>
-                  <div className="text-3xl font-bold text-brand-deep">{n}</div>
+                  <div className="text-3xl font-bold text-brand">{n}</div>
                   <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">
                     {l}
                   </div>
@@ -101,14 +108,15 @@ export function Hero() {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: PREMIUM_EASE }}
               className="relative"
             >
               <Tilt className="relative rounded-3xl overflow-hidden shadow-elevate aspect-[4/5] sm:aspect-[5/6]">
-                <img
+                <motion.img
                   src={heroLocomotiveLift}
                   alt="Locomotiva a ser transportada em operação de carga especial"
-                  className="w-full h-full object-cover"
+                  style={{ y: parallaxY }}
+                  className="w-full h-[115%] scale-110 object-cover"
                   width={1200}
                   height={1200}
                 />

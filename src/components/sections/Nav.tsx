@@ -56,7 +56,7 @@ export function Nav() {
           <div className="flex items-center gap-2">
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center gap-2 rounded-xl bg-hero-gradient text-white px-5 py-2.5 text-sm font-semibold shadow-glow-brand hover:shadow-elevate transition-shadow"
+              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-hero-gradient text-white px-5 py-2.5 text-sm font-semibold shadow-glow-brand transition-all hover:scale-105 hover:shadow-elevate"
             >
               Solicitar Cotação <ArrowRight className="h-4 w-4" />
             </a>

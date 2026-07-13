@@ -33,7 +33,7 @@ export function About() {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -bottom-8 -right-4 sm:right-8 bg-white rounded-2xl p-6 shadow-elevate w-64"
             >
-              <div className="text-5xl font-bold text-gradient-brand">+13</div>
+              <div className="text-5xl font-bold text-brand">+13</div>
               <div className="text-sm text-muted-foreground mt-1">
                 Anos a entregar logística inteligente em Moçambique e SADC
               </div>
@@ -45,45 +45,54 @@ export function About() {
             <div className="inline-flex items-center gap-2 rounded-full bg-brand-ice px-4 py-1.5 text-xs font-semibold text-brand-deep uppercase tracking-wider mb-4">
               <Award className="h-3.5 w-3.5" /> Sobre Nós
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">
-              Parceiro estratégico em{" "}
-              <span className="text-gradient-brand">operações industriais</span>
+            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand">
+              Parceiro estratégico em operações industriais
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed">
-              Somos uma empresa moçambicana com mais de 13 anos no mercado,
-              actuando como operadora logística integrada e inteligente em
-              diversos sectores — do porto ao terreno, com competência técnica,
-              segurança e compromisso.
+              A Highlighter Group é uma empresa com mais de 13 anos de
+              experiência multidisciplinar dedicada a oferecer soluções
+              estratégicas em transporte, logística e apoio industrial. Atuamos
+              em ambientes operacionais exigentes, como portos, ferrovias e
+              indústrias, contribuindo para a continuidade operacional,
+              produtividade e crescimento sustentável dos nossos parceiros.
             </p>
 
-            <div className="mt-8 grid sm:grid-cols-3 gap-4">
-              {[
-                [
-                  "Missão",
-                  "Garantir os objectivos do cliente com eficácia e eficiência.",
-                ],
-                [
-                  "Visão",
-                  "Liderar o mercado nacional e da SADC criando valor sustentável.",
-                ],
-                [
-                  "Valores",
-                  "A pessoa em primeiro lugar — colaboradores, clientes e parceiros.",
-                ],
-              ].map(([t, d]) => (
-                <div
-                  key={t}
-                  className="rounded-2xl border border-border bg-white p-5 hover:border-brand/40 hover:shadow-soft-brand transition-all"
-                >
-                  <div className="text-sm font-bold text-brand">{t}</div>
-                  <div className="mt-2 text-sm text-muted-foreground">{d}</div>
+            <div className="mt-8 grid sm:grid-cols-2 gap-4">
+              <div className="rounded-2xl border border-border bg-white p-5 hover:border-brand/40 hover:shadow-soft-brand transition-all">
+                <div className="text-sm font-bold text-brand">Visão</div>
+                <div className="mt-2 text-sm text-muted-foreground">
+                  Ser uma referência no setor de transporte, logística e
+                  serviços industriais. E contribuir para o desenvolvimento de
+                  operações de grande escala.
                 </div>
-              ))}
+              </div>
+              <div className="rounded-2xl border border-border bg-white p-5 hover:border-brand/40 hover:shadow-soft-brand transition-all grid grid-cols-2 gap-4">
+                <div>
+                  <div className="text-sm font-bold text-brand">Missão</div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Desenvolver soluções inteligentes e integradas em
+                    transporte, logística, serviços ferro-portuários e apoio
+                    industrial, adaptadas às necessidades de grandes operações.
+                  </div>
+                </div>
+                {/* CONFIRMAR COM MARKETING: a captura de ecrã corta o cabeçalho desta
+                    segunda coluna (só se vê o texto após o separador "|"). Assumi
+                    "Valores" por eliminação, já que é o único dos 3 conceitos sem
+                    caixa própria — confirmar com a equipa antes de publicar. */}
+                <div className="border-l border-border pl-4">
+                  <div className="text-sm font-bold text-brand">Valores</div>
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    Garantir eficiência operacional, segurança e cumprimento
+                    rigoroso de normas, e assegurar a execução fiável e
+                    organizada de cada serviço prestado.
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="mt-8 space-y-4">
               {[
-                ["Logística Integrada", 95],
+                ["Logística Integrada", 98],
                 ["Operações Ferroportuárias", 90],
                 ["Estiva & Gestão de Cargas", 85],
               ].map(([l, v]) => (

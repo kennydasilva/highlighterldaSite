@@ -1,5 +1,4 @@
 import {
-  Anchor,
   Facebook,
   Instagram,
   Linkedin,
@@ -9,17 +8,17 @@ import {
   Phone,
 } from "lucide-react";
 
+import { BrandMark } from "@/components/BrandMark";
+
 export function Footer() {
   return (
-    <footer className="bg-brand-deep text-white pt-20 pb-8 relative overflow-hidden">
+    <footer className="bg-brand text-white pt-20 pb-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-10" />
       <div className="container mx-auto px-4 relative">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-1">
             <h3 className="flex items-center gap-2 font-display font-bold text-xl mb-4">
-              <span className="h-10 w-10 rounded-xl bg-white text-brand flex items-center justify-center">
-                <Anchor className="h-5 w-5" />
-              </span>
+              <BrandMark light className="h-9 w-9" />
               Highlighter
             </h3>
             <p className="text-white/70 text-sm leading-relaxed">
@@ -42,6 +41,10 @@ export function Footer() {
 
           <div>
             <h4 className="font-display font-bold mb-4">Serviços</h4>
+            {/* CONFIRMAR COM MARKETING: "Agribusiness" está listado aqui na
+                captura da marketing, mas não existe como card na secção de
+                Serviços (que só tem os 5 cards mostrados na marketing).
+                Mantive o link a apontar para #services, sem card próprio. */}
             <ul className="space-y-2 text-sm text-white/70">
               {[
                 "Operações Portuárias",
@@ -92,16 +95,16 @@ export function Footer() {
             <h4 className="font-display font-bold mb-4">Contactos</h4>
             <ul className="space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">
-                <Phone className="h-4 w-4 mt-0.5 text-brand" />
+                <Phone className="h-4 w-4 mt-0.5 text-white" />
                 +258 84 141 1118
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="h-4 w-4 mt-0.5 text-brand" />
+                <Mail className="h-4 w-4 mt-0.5 text-white" />
                 info@highlighter.co.mz
               </li>
               <li className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 mt-0.5 text-brand" />
-                Av. União Africana Nº 3162, Matola, Moçambique
+                <MapPin className="h-4 w-4 mt-0.5 text-white" />
+                Rua 24 de Julho, Q 25, Nº131, Cidade da Matola
               </li>
             </ul>
           </div>

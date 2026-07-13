@@ -36,6 +36,7 @@
   --color-brand-deep: var(--brand-deep);
   --color-brand-gray: var(--brand-gray);
   --color-brand-ice: var(--brand-ice);
+  --color-brand-light: var(--brand-light);
 
   --font-display: "Space Grotesk", "Inter", sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -44,11 +45,25 @@
 :root {
   --radius: 0.875rem;
 
-  /* Highlighter brand — paleta fechada: branco, azul-marinho, azul de marca, cinza de marca, azul claro */
+  /* Highlighter brand — confirmada por amostragem de píxeis do design real da
+     marketing (src/assets/design/): o azul de marca já validado na Fase 3
+     (#2E75BB) bateu quase certo com o azul da marketing (#3074BB), por isso
+     mantém-se; o que mudou foi o USO — a marketing usa este azul sólido nos
+     blocos grandes (Stats/CTA/Footer/Marquee), reservando o azul-marinho só
+     para acentos escuros (gradiente dos cards de Serviços). */
   --brand-deep: oklch(0.2389 0.0645 259.72); /* #0B1E3D — azul-marinho escuro */
   --brand: oklch(0.5526 0.1298 251.15); /* #2E75BB — azul de marca */
   --brand-gray: oklch(0.5383 0.0048 271.33); /* #6D6E71 — cinza de marca */
   --brand-ice: oklch(0.9558 0.0154 257.2); /* #EAF1FB — azul claro */
+  --brand-light: oklch(
+    0.7772 0.1018 248.84
+  ); /* #82BCF5 — extremo claro do gradiente de botões da marketing */
+  --service-card-from: oklch(
+    0.5024 0.1168 251.9
+  ); /* #2A66A4 — topo do gradiente dos cards de Serviços */
+  --service-card-to: oklch(
+    0.3094 0.062 249.1
+  ); /* #14324E — base do gradiente dos cards de Serviços */
 
   --background: oklch(1 0 0);
   --foreground: var(--brand-deep);
@@ -72,9 +87,14 @@
   --ring: var(--brand);
 
   --gradient-hero: linear-gradient(
-    135deg,
-    var(--brand-deep) 0%,
-    var(--brand) 100%
+    90deg,
+    var(--brand) 0%,
+    var(--brand-light) 100%
+  );
+  --gradient-service-card: linear-gradient(
+    160deg,
+    var(--service-card-from) 0%,
+    var(--service-card-to) 100%
   );
   --gradient-soft: linear-gradient(
     180deg,
@@ -132,16 +152,8 @@
   background: var(--gradient-hero);
 }
 
-@utility text-gradient-brand {
-  background: linear-gradient(
-    110deg,
-    var(--brand-deep),
-    var(--brand) 50%,
-    var(--brand-ice)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+@utility bg-service-card-gradient {
+  background: var(--gradient-service-card);
 }
 
 @utility shadow-elevate {

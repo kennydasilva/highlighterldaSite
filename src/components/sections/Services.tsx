@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Wrench } from "lucide-react";
+import { Wrench } from "lucide-react";
 
 import { SERVICES } from "@/data/services";
 import { fadeUpStagger } from "@/lib/motion-variants";
@@ -23,10 +23,9 @@ export function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl sm:text-5xl font-bold tracking-tight"
+            className="text-4xl sm:text-5xl font-bold tracking-tight text-brand"
           >
-            Excelência em{" "}
-            <span className="text-gradient-brand">logística integrada</span>
+            Excelência em logística integrada
           </motion.h2>
           <p className="mt-4 text-muted-foreground">
             Do porto à última milha, oferecemos soluções completas em cada etapa
@@ -34,7 +33,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col gap-6">
           {SERVICES.map((s, i) => (
             <motion.a
               key={s.title}
@@ -44,9 +43,9 @@ export function Services() {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={cardVariants}
-              className="group relative rounded-3xl overflow-hidden bg-white border border-border shadow-soft-brand hover:shadow-elevate transition-all duration-500 hover:-translate-y-2"
+              className="group relative flex flex-col sm:flex-row overflow-hidden rounded-3xl bg-service-card-gradient shadow-soft-brand transition-all duration-500 hover:-translate-y-2 hover:shadow-elevate"
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-56 sm:h-auto sm:w-2/5 overflow-hidden shrink-0">
                 <img
                   src={s.img}
                   alt={s.alt}
@@ -55,25 +54,15 @@ export function Services() {
                   height={960}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/90 via-brand-deep/20 to-transparent" />
-                <div className="absolute top-4 left-4 h-12 w-12 rounded-2xl bg-white/95 backdrop-blur flex items-center justify-center shadow-glow-brand">
-                  <s.icon className="h-6 w-6 text-brand" />
-                </div>
-                <div className="absolute top-4 right-4 text-white/70 text-sm font-mono">
-                  0{i + 1}
-                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-brand-deep group-hover:text-brand transition-colors">
-                  {s.title}
-                </h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+              <div className="relative flex-1 p-6 sm:p-8 text-white">
+                <h3 className="text-xl font-bold">{s.title}</h3>
+                <p className="mt-3 text-sm text-white/85 leading-relaxed">
                   {s.desc}
                 </p>
-                <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand">
+                <span className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold backdrop-blur transition-colors group-hover:bg-white group-hover:text-brand-deep">
                   Saiba mais
-                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                </div>
+                </span>
               </div>
             </motion.a>
           ))}

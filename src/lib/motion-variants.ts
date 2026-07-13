@@ -1,5 +1,8 @@
 import type { Variants } from "framer-motion";
 
+/** Easing "premium" (saída rápida, chegada suave) usado nas animações de entrada principais. */
+export const PREMIUM_EASE = [0.22, 1, 0.36, 1] as const;
+
 /**
  * Fade + slide-up de entrada, com stagger por índice (via prop `custom`).
  * `delayStep` e `duration` existem para preservar o timing que cada secção já
@@ -11,7 +14,7 @@ export function fadeUpStagger(delayStep = 0.08, duration = 0.5): Variants {
     visible: (i: number = 0) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * delayStep, duration },
+      transition: { delay: i * delayStep, duration, ease: PREMIUM_EASE },
     }),
   };
 }
