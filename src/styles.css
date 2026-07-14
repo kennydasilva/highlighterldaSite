@@ -45,14 +45,12 @@
 :root {
   --radius: 0.875rem;
 
-  /* Highlighter brand — confirmada por amostragem de píxeis do design real da
-     marketing (src/assets/design/): o azul de marca já validado na Fase 3
-     (#2E75BB) bateu quase certo com o azul da marketing (#3074BB), por isso
-     mantém-se; o que mudou foi o USO — a marketing usa este azul sólido nos
-     blocos grandes (Stats/CTA/Footer/Marquee), reservando o azul-marinho só
-     para acentos escuros (gradiente dos cards de Serviços). */
+  /* Highlighter brand — o azul de marca definitivo é #38B6FF (extraído por
+     amostragem de píxeis do ficheiro de referência oficial). Usa-se este azul
+     sólido nos blocos grandes (Stats/CTA/Footer/Marquee), reservando o
+     azul-marinho só para acentos escuros (gradiente dos cards de Serviços). */
   --brand-deep: oklch(0.2389 0.0645 259.72); /* #0B1E3D — azul-marinho escuro */
-  --brand: oklch(0.5526 0.1298 251.15); /* #2E75BB — azul de marca */
+  --brand: oklch(0.741 0.1499 239.59); /* #38B6FF — azul de marca */
   --brand-gray: oklch(0.5383 0.0048 271.33); /* #6D6E71 — cinza de marca */
   --brand-ice: oklch(0.9558 0.0154 257.2); /* #EAF1FB — azul claro */
   --brand-light: oklch(
@@ -85,7 +83,7 @@
     var(--brand) 0%,
     var(--brand-light) 100%
   );
-  /* Mesmo token --brand do botão "Solicitar Cotação" (#2E75BB), nunca uma cor
+  /* Mesmo token --brand do botão "Solicitar Cotação" (#38B6FF), nunca uma cor
      nova — a variação mais escura usa --brand-deep, já definido acima. */
   --gradient-service-card: linear-gradient(
     160deg,
@@ -105,7 +103,7 @@
   --shadow-elevate:
     0 30px 60px -25px oklch(0.2389 0.0645 259.72 / 0.45),
     0 10px 30px -15px oklch(0.2389 0.0645 259.72 / 0.25);
-  --shadow-glow: 0 0 60px oklch(0.5526 0.1298 251.15 / 0.35);
+  --shadow-glow: 0 0 60px oklch(0.741 0.1499 239.59 / 0.35);
   --shadow-soft: 0 12px 40px -12px oklch(0.2389 0.0645 259.72 / 0.18);
 }
 
@@ -135,10 +133,10 @@
 /* Animated grid background */
 @utility bg-grid {
   background-image:
-    linear-gradient(oklch(0.5526 0.1298 251.15 / 0.08) 1px, transparent 1px),
+    linear-gradient(oklch(0.741 0.1499 239.59 / 0.08) 1px, transparent 1px),
     linear-gradient(
       90deg,
-      oklch(0.5526 0.1298 251.15 / 0.08) 1px,
+      oklch(0.741 0.1499 239.59 / 0.08) 1px,
       transparent 1px
     );
   background-size: 48px 48px;

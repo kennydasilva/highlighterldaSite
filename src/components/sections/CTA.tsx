@@ -12,7 +12,7 @@ export function CTA() {
               Pronto para enviar a sua carga para{" "}
               <span className="text-brand-deep">qualquer parte do mundo?</span>
             </h2>
-            <p className="mt-6 text-white/80 text-lg">
+            <p className="mt-6 text-white/80 text-lg text-justify">
               Fale com a nossa equipa e receba uma proposta adaptada à sua
               operação.
             </p>

@@ -43,7 +43,7 @@ export function Services() {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={cardVariants}
-              className="group relative flex flex-col sm:flex-row overflow-hidden rounded-3xl bg-service-card-gradient shadow-soft-brand transition-all duration-500 hover:-translate-y-2 hover:shadow-elevate"
+              className="group relative flex flex-col sm:flex-row overflow-hidden rounded-3xl bg-service-card-gradient shadow-soft-brand transition-all duration-500 hover:-translate-y-2 hover:shadow-elevate xl:h-80"
             >
               <div className="relative h-56 sm:h-auto sm:w-2/5 overflow-hidden shrink-0">
                 <img
@@ -57,7 +57,7 @@ export function Services() {
               </div>
               <div className="relative flex-1 p-6 sm:p-8 text-white">
                 <h3 className="text-xl font-bold">{s.title}</h3>
-                <p className="mt-3 text-sm text-white/85 leading-relaxed">
+                <p className="mt-3 text-sm text-white/85 leading-relaxed text-justify">
                   {s.desc}
                 </p>
                 <span className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold backdrop-blur transition-colors group-hover:bg-white group-hover:text-brand-deep">
