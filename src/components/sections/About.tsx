@@ -56,19 +56,13 @@ export function About() {
               indústrias, contribuindo para a continuidade operacional,
               produtividade e crescimento sustentável dos nossos parceiros.
             </p>
-            <p className="mt-4 text-muted-foreground leading-relaxed text-justify">
-              Trabalhamos com foco na eficiência, segurança e fiabilidade,
-              garantindo que cada operação seja executada com excelência e
-              dentro dos padrões exigidos pelo mercado.
-            </p>
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
               <div className="rounded-2xl border border-border bg-white p-5 hover:border-brand/40 hover:shadow-soft-brand transition-all">
                 <div className="text-sm font-bold text-brand">Visão</div>
                 <div className="mt-2 text-sm text-muted-foreground">
                   Ser uma referência no setor de transporte, logística e
-                  serviços industriais, reconhecida pela inovação, eficiência
-                  operacional e contribuição para o desenvolvimento de
+                  serviços industriais. E contribuir para o desenvolvimento de
                   operações de grande escala.
                 </div>
               </div>

@@ -6,13 +6,10 @@ import { Marquee } from "@/components/sections/Marquee";
 import { Services } from "@/components/sections/Services";
 import { Stats } from "@/components/sections/Stats";
 import { About } from "@/components/sections/About";
-import { CEOMessage } from "@/components/sections/CEOMessage";
 import { Differentials } from "@/components/sections/Differentials";
-import { Fleet } from "@/components/sections/Fleet";
 import { Tracking } from "@/components/sections/Tracking";
 import { Testimonial } from "@/components/sections/Testimonial";
 import { FAQ } from "@/components/sections/FAQ";
-import { Certifications } from "@/components/sections/Certifications";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
 
@@ -58,13 +55,10 @@ function Index() {
       <Services />
       <Stats />
       <About />
-      <CEOMessage />
       <Differentials />
-      <Fleet />
       <Tracking />
       <Testimonial />
       <FAQ />
-      <Certifications />
       <CTA />
       <Footer />
     </div>
