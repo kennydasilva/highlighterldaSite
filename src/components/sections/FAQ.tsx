@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
 
 import { FAQS } from "@/data/faqs";
+import highlighterLogo from "@/assets/imagens/logo/HIGHLIGHTER-LOGO.png";
 
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
@@ -10,17 +11,24 @@ export function FAQ() {
     <section className="py-24 bg-brand-ice/40">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-brand-deep uppercase tracking-wider mb-4">
-              FAQ
+          <div className="flex flex-col">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-brand-deep uppercase tracking-wider mb-4">
+                FAQ
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand">
+                Perguntas Frequentes
+              </h2>
+              <p className="mt-4 text-muted-foreground">
+                Informações importantes sobre as nossas operações logísticas,
+                envio, entrega e segurança.
+              </p>
             </div>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand">
-              Perguntas Frequentes
-            </h2>
-            <p className="mt-4 text-muted-foreground">
-              Informações importantes sobre as nossas operações logísticas,
-              envio, entrega e segurança.
-            </p>
+            <img
+              src={highlighterLogo}
+              alt="Highlighter Group"
+              className="hidden lg:block w-44 h-auto mt-auto opacity-80"
+            />
           </div>
           <div className="space-y-3">
             {FAQS.map(([q, a], i) => (
