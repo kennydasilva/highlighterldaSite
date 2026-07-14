@@ -100,11 +100,22 @@
     oklch(1 0 0 / 0.9),
     oklch(0.9558 0.0154 257.2 / 0.6)
   );
+  /* Gradiente suave para blocos grandes (Stats/CTA/Footer/Marquee): parte do
+     azul de marca para um tom ligeiramente mais escuro da mesma família,
+     derivado automaticamente via relative color syntax — evita cor plana em
+     bloco sem introduzir uma nova cor hardcoded fora do token --brand. */
+  --gradient-brand-soft: linear-gradient(
+    135deg,
+    var(--brand) 0%,
+    oklch(from var(--brand) calc(l - 0.13) calc(c + 0.01) h) 100%
+  );
+  /* Sombras suavizadas — blur maior e opacidade menor que antes, para um
+     acabamento "flutuante e leve" em vez de recortado. */
   --shadow-elevate:
-    0 30px 60px -25px oklch(0.2389 0.0645 259.72 / 0.45),
-    0 10px 30px -15px oklch(0.2389 0.0645 259.72 / 0.25);
-  --shadow-glow: 0 0 60px oklch(0.741 0.1499 239.59 / 0.35);
-  --shadow-soft: 0 12px 40px -12px oklch(0.2389 0.0645 259.72 / 0.18);
+    0 35px 70px -30px oklch(0.2389 0.0645 259.72 / 0.28),
+    0 12px 32px -16px oklch(0.2389 0.0645 259.72 / 0.16);
+  --shadow-glow: 0 0 70px oklch(0.741 0.1499 239.59 / 0.22);
+  --shadow-soft: 0 16px 45px -14px oklch(0.2389 0.0645 259.72 / 0.12);
 }
 
 @layer base {
@@ -144,6 +155,10 @@
 
 @utility bg-hero-gradient {
   background: var(--gradient-hero);
+}
+
+@utility bg-brand-soft-gradient {
+  background: var(--gradient-brand-soft);
 }
 
 @utility bg-service-card-gradient {

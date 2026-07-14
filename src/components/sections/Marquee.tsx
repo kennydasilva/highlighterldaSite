@@ -10,7 +10,7 @@ export function Marquee() {
   ];
   const row = [...items, ...items];
   return (
-    <section className="py-8 border-y border-border bg-brand text-white overflow-hidden">
+    <section className="py-8 border-y border-border bg-brand-soft-gradient text-white overflow-hidden">
       <div className="flex animate-marquee gap-12 whitespace-nowrap">
         {row.map((t, i) => (
           <div

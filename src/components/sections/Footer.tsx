@@ -12,7 +12,7 @@ import highlighterLogo from "@/assets/imagens/logo/HIGHLIGHTER-LOGO.png";
 
 export function Footer() {
   return (
-    <footer className="bg-brand text-white pt-20 pb-8 relative overflow-hidden">
+    <footer className="bg-brand-soft-gradient text-white pt-20 pb-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-10" />
       <div className="container mx-auto px-4 relative">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">

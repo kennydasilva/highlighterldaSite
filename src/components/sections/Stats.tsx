@@ -12,7 +12,7 @@ export function Stats() {
     { n: 50, s: "+", l: "Especialistas" },
   ];
   return (
-    <section className="py-20 relative overflow-hidden bg-brand text-white">
+    <section className="py-20 relative overflow-hidden bg-brand-soft-gradient text-white">
       <div className="absolute inset-0 bg-grid opacity-20" />
       <div className="absolute -top-20 -right-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
       <div className="container mx-auto px-4 relative">
