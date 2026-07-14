@@ -39,4 +39,10 @@ export const SERVICES = [
     img: serviceWorkforce,
     alt: "Equipa de colaboradores da Highlighter em uniforme de trabalho",
   },
+  {
+    title: "Apoio a Operações Portuárias",
+    desc: "Apoio operacional completo a atividades portuárias, incluindo coordenação de operações, suporte logístico e assistência em processos de carga e descarga. Trabalhamos para assegurar fluidez operacional, redução de tempos de espera e maior produtividade nas operações portuárias.",
+    img: serviceStevedoreCargo,
+    alt: "Guindaste a carregar sacos de carga num camião no porto",
+  },
 ];

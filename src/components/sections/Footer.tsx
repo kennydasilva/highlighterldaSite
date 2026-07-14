@@ -1,5 +1,6 @@
 import {
   Facebook,
+  Globe,
   Instagram,
   Linkedin,
   Mail,
@@ -104,11 +105,29 @@ export function Footer() {
                 +258 84 141 1118
               </li>
               <li className="flex items-start gap-3">
-                <Mail className="h-4 w-4 mt-0.5 text-white" />
-                info@highlighter.co.mz
+                <Globe className="h-4 w-4 mt-0.5 text-white" />
+                <a
+                  href="https://www.highlighterlda.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  www.highlighterlda.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <Mail className="h-4 w-4 mt-0.5 text-white shrink-0" />
+                <span>
+                  Geral: info@highlighter.co.mz
+                  <br />
+                  Comercial: comercial@highlighter.co.mz
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-white" />
+                {/* CONFIRMAR MORADA: portefólio diz "Av. União Africana Nº
+                    3162", site atual diz "Rua 24 de Julho, Q25, Nº131" —
+                    mantido o endereço atual até confirmação. */}
                 Rua 24 de Julho, Q 25, Nº131, Cidade da Matola
               </li>
             </ul>
