@@ -58,7 +58,7 @@ export function About() {
             </p>
 
             <div className="mt-8 grid sm:grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-border bg-white p-5 hover:border-brand/40 hover:shadow-soft-brand transition-all">
+              <div className="rounded-2xl border border-border bg-white p-5 hover:border-brand/40 hover:shadow-soft-brand transition-all duration-300">
                 <div className="text-sm font-bold text-brand">Visão</div>
                 <div className="mt-2 text-sm text-muted-foreground">
                   Ser uma referência no setor de transporte, logística e
@@ -66,7 +66,7 @@ export function About() {
                   operações de grande escala.
                 </div>
               </div>
-              <div className="rounded-2xl border border-border bg-white p-5 hover:border-brand/40 hover:shadow-soft-brand transition-all grid grid-cols-2 gap-4">
+              <div className="rounded-2xl border border-border bg-white p-5 hover:border-brand/40 hover:shadow-soft-brand transition-all duration-300 grid grid-cols-2 gap-4">
                 <div>
                   <div className="text-sm font-bold text-brand">Missão</div>
                   <div className="mt-2 text-sm text-muted-foreground">

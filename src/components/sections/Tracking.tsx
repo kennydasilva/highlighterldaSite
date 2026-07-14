@@ -34,7 +34,7 @@ export function Tracking() {
                 <button
                   type="button"
                   // TODO: ligar a sistema de rastreio real
-                  className="rounded-full bg-white text-brand-deep px-7 py-4 font-semibold transition-all hover:scale-105 hover:bg-brand-ice inline-flex items-center justify-center gap-2"
+                  className="rounded-full bg-white text-brand-deep px-7 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:bg-brand-ice inline-flex items-center justify-center gap-2"
                 >
                   Rastrear <ArrowRight className="h-4 w-4" />
                 </button>

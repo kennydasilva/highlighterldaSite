@@ -26,7 +26,7 @@ export function FAQ() {
             {FAQS.map(([q, a], i) => (
               <div
                 key={i}
-                className="rounded-2xl bg-white border border-border overflow-hidden hover:border-brand/30 transition-colors"
+                className="rounded-3xl bg-white border border-border overflow-hidden hover:border-brand/30 transition-colors duration-300"
               >
                 <button
                   onClick={() => setOpen(open === i ? null : i)}

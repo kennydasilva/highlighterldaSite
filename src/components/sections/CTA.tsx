@@ -23,13 +23,13 @@ export function CTA() {
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <a
                 href="tel:+258870000000"
-                className="inline-flex items-center gap-3 rounded-full bg-white text-brand-deep px-8 py-4 font-semibold shadow-elevate transition-all hover:scale-105"
+                className="inline-flex items-center gap-3 rounded-full bg-white text-brand-deep px-8 py-4 font-semibold shadow-elevate transition-all duration-300 hover:scale-105"
               >
                 <Phone className="h-5 w-5" /> +258 87 000 0000
               </a>
               <a
                 href="mailto:info@highlighter.co.mz"
-                className="inline-flex items-center gap-3 rounded-full border border-white/40 px-8 py-4 font-semibold transition-all hover:scale-105 hover:bg-white/10"
+                className="inline-flex items-center gap-3 rounded-full border border-white/40 px-8 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/10"
               >
                 <Mail className="h-5 w-5" /> Solicitar cotação
               </a>

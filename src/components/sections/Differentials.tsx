@@ -34,7 +34,7 @@ export function Differentials() {
               whileInView="visible"
               viewport={{ once: true }}
               variants={diffVariants}
-              className="group rounded-3xl bg-white p-8 border border-border hover:border-brand/40 hover:shadow-elevate transition-all hover:-translate-y-1"
+              className="group rounded-3xl bg-white p-8 border border-border hover:border-brand/40 hover:shadow-elevate transition-all duration-300 hover:-translate-y-1"
             >
               <h3 className="text-xl font-bold text-brand-deep">{d.title}</h3>
               <p className="mt-2 text-muted-foreground text-sm leading-relaxed">

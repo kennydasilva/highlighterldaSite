@@ -36,7 +36,7 @@ export function Footer() {
                   key={i}
                   // TODO: adicionar URLs reais das redes sociais
                   href="#"
-                  className="h-10 w-10 rounded-xl bg-white/10 hover:bg-white hover:text-brand-deep flex items-center justify-center transition-colors"
+                  className="h-10 w-10 rounded-full bg-white/10 hover:bg-white hover:text-brand-deep flex items-center justify-center transition-colors"
                 >
                   <Ic className="h-4 w-4" />
                 </a>

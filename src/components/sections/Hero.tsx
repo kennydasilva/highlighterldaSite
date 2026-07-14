@@ -59,14 +59,14 @@ export function Hero() {
             >
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-3 rounded-full bg-hero-gradient text-white px-7 py-4 font-semibold shadow-glow-brand transition-all hover:scale-105 hover:shadow-elevate"
+                className="group inline-flex items-center gap-3 rounded-full bg-hero-gradient text-white px-7 py-4 font-semibold shadow-glow-brand transition-all duration-300 hover:scale-105 hover:shadow-elevate"
               >
                 Solicitar Cotação
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 rounded-full border border-brand-deep/20 px-7 py-4 font-semibold text-brand-deep transition-all hover:scale-105 hover:bg-brand-ice"
+                className="inline-flex items-center gap-2 rounded-full border border-brand-deep/20 px-7 py-4 font-semibold text-brand-deep transition-all duration-300 hover:scale-105 hover:bg-brand-ice"
               >
                 Ver Serviços
               </a>

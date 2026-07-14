@@ -54,13 +54,13 @@ export function Nav() {
           <div className="flex items-center gap-2">
             <a
               href="#contact"
-              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-hero-gradient text-white px-5 py-2.5 text-sm font-semibold shadow-glow-brand transition-all hover:scale-105 hover:shadow-elevate"
+              className="hidden sm:inline-flex items-center gap-2 rounded-full bg-hero-gradient text-white px-5 py-2.5 text-sm font-semibold shadow-glow-brand transition-all duration-300 hover:scale-105 hover:shadow-elevate"
             >
               Solicitar Cotação <ArrowRight className="h-4 w-4" />
             </a>
             <button
               onClick={() => setOpen(!open)}
-              className="lg:hidden h-10 w-10 inline-flex items-center justify-center rounded-xl glass"
+              className="lg:hidden h-10 w-10 inline-flex items-center justify-center rounded-full glass"
               aria-label="Menu"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
