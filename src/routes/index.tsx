@@ -7,8 +7,8 @@ import { Services } from "@/components/sections/Services";
 import { Stats } from "@/components/sections/Stats";
 import { About } from "@/components/sections/About";
 import { Differentials } from "@/components/sections/Differentials";
-import { Tracking } from "@/components/sections/Tracking";
-import { Testimonial } from "@/components/sections/Testimonial";
+import { TrackingTestimonial } from "@/components/sections/TrackingTestimonial";
+import { Partners } from "@/components/sections/Partners";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
@@ -56,8 +56,8 @@ function Index() {
       <Stats />
       <About />
       <Differentials />
-      <Tracking />
-      <Testimonial />
+      <TrackingTestimonial />
+      <Partners />
       <FAQ />
       <CTA />
       <Footer />

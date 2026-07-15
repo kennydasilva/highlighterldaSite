@@ -19,16 +19,18 @@ export function FAQ() {
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand">
                 Perguntas Frequentes
               </h2>
-              <p className="mt-4 text-muted-foreground">
+              <p className="mt-4 text-muted-foreground text-justify">
                 Informações importantes sobre as nossas operações logísticas,
                 envio, entrega e segurança.
               </p>
             </div>
-            <img
-              src={highlighterLogo}
-              alt="Highlighter Group"
-              className="hidden lg:block w-44 h-auto mt-auto opacity-80"
-            />
+            <div className="hidden lg:flex flex-1 items-center justify-center">
+              <img
+                src={highlighterLogo}
+                alt="Highlighter Group"
+                className="w-full max-w-md h-auto object-contain opacity-80 animate-float"
+              />
+            </div>
           </div>
           <div className="space-y-3">
             {FAQS.map(([q, a], i) => (
@@ -57,7 +59,7 @@ export function FAQ() {
                   }}
                   className="overflow-hidden"
                 >
-                  <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed">
+                  <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed text-justify">
                     {a}
                   </div>
                 </motion.div>
