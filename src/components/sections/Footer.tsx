@@ -46,10 +46,7 @@ export function Footer() {
 
           <div>
             <h4 className="font-display font-bold mb-4">Serviços</h4>
-            {/* CONFIRMAR COM MARKETING: "Agribusiness" está listado aqui na
-                captura da marketing, mas não existe como card na secção de
-                Serviços (que só tem os 5 cards mostrados na marketing).
-                Mantive o link a apontar para #services, sem card próprio. */}
+           
             <ul className="space-y-2 text-sm text-white/70">
               {[
                 "Operações Portuárias",
@@ -105,7 +102,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-4 w-4 mt-0.5 text-white" />
-                info@highlighter.co.mz
+                comercial@highlighter.co.mz
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-white" />

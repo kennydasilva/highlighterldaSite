@@ -53,7 +53,7 @@ export function About() {
               <h2 className="text-5xl sm:text-6xl font-bold tracking-tight text-brand">
                 Parceiro estratégico em operações industriais
               </h2>
-              <p className="mt-6 text-muted-foreground leading-relaxed text-justify">
+              <p className="mt-6 text-muted-foreground leading-relaxed text-left">
                 A Highlighter Group é uma empresa com mais de 13 anos de
                 experiência multidisciplinar dedicada a oferecer soluções
                 estratégicas em transporte, logística e apoio industrial. Atuamos

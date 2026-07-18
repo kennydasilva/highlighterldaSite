@@ -59,7 +59,7 @@ export function Services() {
               </div>
               <div className="relative flex-1 p-6 sm:p-8 text-white">
                 <h3 className="text-xl font-bold">{s.title}</h3>
-                <p className="mt-3 text-sm text-white/85 leading-relaxed text-justify">
+                <p className="mt-3 text-sm text-white/85 leading-relaxed text-left">
                   {s.desc}
                 </p>
                 <span className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold backdrop-blur transition-colors group-hover:bg-white group-hover:text-brand-deep">

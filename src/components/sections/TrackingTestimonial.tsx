@@ -118,7 +118,7 @@ export function TrackingTestimonial() {
               >
                 &rdquo;
               </span>
-              <p className="relative text-sm sm:text-base leading-relaxed text-white/95 text-justify">
+              <p className="relative text-sm sm:text-base leading-relaxed text-white/95 text-left">
                 {testimonial.quote}
               </p>
               <div className="relative mt-4">

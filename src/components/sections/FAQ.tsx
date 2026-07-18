@@ -19,7 +19,7 @@ export function FAQ() {
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand">
                 Perguntas Frequentes
               </h2>
-              <p className="mt-4 text-muted-foreground text-justify">
+              <p className="mt-4 text-muted-foreground text-left">
                 Informações importantes sobre as nossas operações logísticas,
                 envio, entrega e segurança.
               </p>
@@ -59,7 +59,7 @@ export function FAQ() {
                   }}
                   className="overflow-hidden"
                 >
-                  <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed text-justify">
+                  <div className="px-5 pb-5 text-sm text-muted-foreground leading-relaxed text-left">
                     {a}
                   </div>
                 </motion.div>

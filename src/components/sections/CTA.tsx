@@ -12,23 +12,20 @@ export function CTA() {
               Pronto para enviar a sua carga para{" "}
               <span className="text-brand-deep">qualquer parte do mundo?</span>
             </h2>
-            <p className="mt-6 text-white/80 text-lg text-justify">
+            <p className="mt-6 text-white/80 text-lg text-left">
               Fale com a nossa equipa e receba uma proposta adaptada à sua
               operação.
             </p>
-            {/* CONFIRMAR COM MARKETING: este número (+258 87 000 0000) parece um
-                placeholder — o número real usado em todo o resto do site (Footer
-                incluído) é +258 84 141 1118. Implementei literalmente o que está
-                na imagem da marketing. */}
+           
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <a
-                href="tel:+258870000000"
+                href="tel:+258841411118"
                 className="inline-flex items-center gap-3 rounded-full bg-white text-brand-deep px-8 py-4 font-semibold shadow-elevate transition-all duration-300 hover:scale-105"
               >
-                <Phone className="h-5 w-5" /> +258 87 000 0000
+                <Phone className="h-5 w-5" /> +258 841411118
               </a>
               <a
-                href="mailto:info@highlighter.co.mz"
+                href="mailto:comercial@highlighter.co.mz"
                 className="inline-flex items-center gap-3 rounded-full border border-white/40 px-8 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/10"
               >
                 <Mail className="h-5 w-5" /> Solicitar cotação
