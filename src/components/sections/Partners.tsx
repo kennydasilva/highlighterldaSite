@@ -14,6 +14,8 @@ import anda from "@/assets/logotipo/ANDA.png";
 import bollore from "@/assets/logotipo/bOLLORE.png";
 import transcargo from "@/assets/logotipo/transcargo.png";
 import ht from "@/assets/logotipo/HT.png";
+import texeiraDuarte from "@/assets/logotipo/texeira_duarte.png";
+import emim from "@/assets/logotipo/EMIM.png";
 
 const PARTNERS = [
   { name: "Truck Freight Easy", logo: truckFreightEasy },
@@ -28,6 +30,8 @@ const PARTNERS = [
   { name: "Bolloré", logo: bollore },
   { name: "Transcargo", logo: transcargo },
   { name: "HT", logo: ht },
+  { name: "Texeira Duarte", logo: texeiraDuarte },
+  { name: "EMIM", logo: emim },
 ];
 
 export function Partners() {
