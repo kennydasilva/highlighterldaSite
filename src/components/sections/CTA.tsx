@@ -9,12 +9,13 @@ export function CTA() {
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-80 w-80 rounded-full bg-white/15 blur-3xl" />
           <div className="relative max-w-3xl mx-auto">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]">
-              Pronto para enviar a sua carga para{" "}
-              <span className="text-brand-deep">qualquer parte do mundo?</span>
+              Precisa de uma operação{" "}
+              <span className="text-brand-deep">mais eficiente e segura?</span>
             </h2>
             <p className="mt-6 text-white/80 text-lg text-left">
-              Fale com a nossa equipa e receba uma proposta adaptada à sua
-              operação.
+              A Highlighter Group oferece soluções inteligentes em transporte,
+              logística e serviços ferro-portuários e industriais. Fale
+              connosco e receba uma proposta feita à medida da sua operação.
             </p>
            
             <div className="mt-10 flex flex-wrap justify-center gap-4">
