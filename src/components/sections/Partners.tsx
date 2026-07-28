@@ -2,20 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Handshake } from "lucide-react";
 
-import truckFreightEasy from "@/assets/logotipo/TRUCKFREIGTEASY.png";
-import overview from "@/assets/logotipo/OVERVIEW.png";
-import mozFertilizer from "@/assets/logotipo/MOZfERTILIZER.jpeg";
-import grindrod from "@/assets/logotipo/GRINDROD.png";
-import cvm from "@/assets/logotipo/CVM.jpeg";
-import micd from "@/assets/logotipo/MICD.jpeg";
-import cfm from "@/assets/logotipo/cfm.webp";
-import zap from "@/assets/logotipo/ZAP.png";
-import anda from "@/assets/logotipo/ANDA.png";
-import bollore from "@/assets/logotipo/bOLLORE.png";
-import transcargo from "@/assets/logotipo/transcargo.png";
-import ht from "@/assets/logotipo/HT.png";
-import texeiraDuarte from "@/assets/logotipo/texeira_duarte.png";
-import emim from "@/assets/logotipo/EMIM.png";
+import truckFreightEasy from "@/assets/logotipo/logos_transparentes/TRUCKFREIGTEASY_cropped.png";
+import overview from "@/assets/logotipo/logos_transparentes/OVERVIEW_cropped.png";
+import mozFertilizer from "@/assets/logotipo/logos_transparentes/MOZfERTILIZER_cropped.png";
+import grindrod from "@/assets/logotipo/logos_transparentes/GRINDROD_cropped.png";
+import cvm from "@/assets/logotipo/logos_transparentes/CVM_cropped.png";
+import micd from "@/assets/logotipo/logos_transparentes/MICD_cropped.png";
+import cfm from "@/assets/logotipo/logos_transparentes/cfm_cropped.png";
+import zap from "@/assets/logotipo/logos_transparentes/ZAP_cropped.png";
+import anda from "@/assets/logotipo/logos_transparentes/ANDA_cropped.png";
+import bollore from "@/assets/logotipo/logos_transparentes/bOLLORE_cropped.png";
+import transcargo from "@/assets/logotipo/logos_transparentes/transcargo_cropped.png";
+import ht from "@/assets/logotipo/logos_transparentes/HT_cropped.png";
+import texeiraDuarte from "@/assets/logotipo/logos_transparentes/texeira_duarte_cropped.png";
+import emim from "@/assets/logotipo/logos_transparentes/EMIM_cropped.png";
 
 const PARTNERS = [
   { name: "Truck Freight Easy", logo: truckFreightEasy },
@@ -83,7 +83,7 @@ export function Partners() {
             {PARTNERS.map((partner) => (
               <div
                 key={partner.name}
-                className="shrink-0 flex items-center justify-center h-20 w-40 lg:h-24 lg:w-48 rounded-3xl bg-white border border-border hover:border-brand/40 hover:shadow-elevate transition-all duration-300 hover:-translate-y-1 p-6"
+                className="shrink-0 flex items-center justify-center h-24 w-44 lg:h-28 lg:w-56 rounded-3xl bg-white border border-border hover:border-brand/40 hover:shadow-elevate transition-all duration-300 hover:-translate-y-1 p-2.5"
               >
                 <img
                   src={partner.logo}
