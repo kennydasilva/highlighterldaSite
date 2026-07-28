@@ -54,30 +54,38 @@ export function MozambiqueMap() {
         />
       </svg>
 
-      {/* Marcadores dos hubs */}
-      {MOZ_HUBS.map((hub, i) => (
-        <motion.div
-          key={hub.name}
-          className={`absolute flex items-center gap-2 ${hub.left > 60 ? "flex-row-reverse" : ""}`}
-          style={{
-            left: `${hub.left}%`,
-            top: `${hub.top}%`,
-            transform: "translate(-50%, -50%)",
-          }}
-          initial={{ opacity: 0, scale: 0 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.6 + i * 0.15 }}
-        >
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inset-0 rounded-full bg-white animate-pulse-ring" />
-            <span className="relative block h-2.5 w-2.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)]" />
-          </span>
-          <span className="whitespace-nowrap rounded-full bg-black/20 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur-sm">
-            {hub.name}
-          </span>
-        </motion.div>
-      ))}
+      {/* Marcadores dos hubs — o ponto fica sempre exatamente na coordenada;
+          a etiqueta é posicionada à parte para não deslocar o ponto. */}
+      {MOZ_HUBS.map((hub, i) => {
+        const labelOnLeft = hub.left > 60;
+        return (
+          <motion.div
+            key={hub.name}
+            className="absolute"
+            style={{
+              left: `${hub.left}%`,
+              top: `${hub.top}%`,
+              transform: "translate(-50%, -50%)",
+            }}
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.6 + i * 0.15 }}
+          >
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="absolute inset-0 rounded-full bg-white animate-pulse-ring" />
+              <span className="relative block h-2.5 w-2.5 rounded-full bg-white shadow-[0_0_8px_rgba(255,255,255,0.9)]" />
+            </span>
+            <span
+              className={`absolute top-1/2 -translate-y-1/2 whitespace-nowrap rounded-full bg-black/30 px-2 py-0.5 text-[11px] font-medium text-white backdrop-blur-sm ${
+                labelOnLeft ? "right-full mr-2" : "left-full ml-2"
+              }`}
+            >
+              {hub.name}
+            </span>
+          </motion.div>
+        );
+      })}
     </div>
   );
 }

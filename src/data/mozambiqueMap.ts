@@ -12,6 +12,6 @@ export const MOZ_HUBS: { name: string; left: number; top: number }[] = [
   { name: "Maputo", left: 22.2, top: 94.6 },
   { name: "Beira", left: 43.4, top: 57.2 },
   { name: "Tete", left: 31.7, top: 34.7 },
-  { name: "Nacala", left: 98.4, top: 25.0 },
-  { name: "Pemba", left: 96.9, top: 15.3 },
+  { name: "Nacala", left: 97.4, top: 25.3 },
+  { name: "Pemba", left: 96.0, top: 15.9 },
 ];
