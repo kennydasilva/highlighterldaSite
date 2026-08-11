@@ -18,6 +18,7 @@ export function Nav() {
     ["Serviços", "#services"],
     ["Sobre", "#about"],
     ["Diferenciais", "#diferenciais"],
+    ["Galeria", "#galeria"],
     ["Contactos", "#contact"],
   ];
   return (
