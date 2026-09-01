@@ -85,8 +85,6 @@ const pt = {
     badge: "Sobre Nós",
     imageAlt:
       "Equipa da Highlighter em operação no terreno, com capacetes e coletes de segurança",
-    floatingNumber: "+13",
-    floatingText: "Anos a entregar logística inteligente em Moçambique e SADC",
     title: "Parceiro estratégico em operações industriais",
     paragraph:
       "A Highlighter Group é uma empresa com mais de 13 anos de experiência multidisciplinar dedicada a oferecer soluções estratégicas em transporte, logística e apoio industrial. Atuamos em ambientes operacionais exigentes, como portos, ferrovias e indústrias, contribuindo para a continuidade operacional, produtividade e crescimento sustentável dos nossos parceiros.",
@@ -339,8 +337,6 @@ const en = {
     badge: "About Us",
     imageAlt:
       "Highlighter team working on-site, wearing helmets and safety vests",
-    floatingNumber: "+13",
-    floatingText: "Years delivering smart logistics in Mozambique and SADC",
     title: "Strategic partner in industrial operations",
     paragraph:
       "Highlighter Group is a company with over 13 years of multidisciplinary experience dedicated to delivering strategic solutions in transport, logistics and industrial support. We operate in demanding operational environments such as ports, railways and industries, contributing to the operational continuity, productivity and sustainable growth of our partners.",

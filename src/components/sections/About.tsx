@@ -35,18 +35,6 @@ export function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-brand-deep/60 to-transparent" />
             </Tilt>
 
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-8 lg:-bottom-4 -right-4 sm:right-8 bg-white rounded-2xl p-6 shadow-elevate w-64"
-            >
-              <div className="text-5xl font-bold text-brand">
-                {t.about.floatingNumber}
-              </div>
-              <div className="text-sm text-muted-foreground mt-1">
-                {t.about.floatingText}
-              </div>
-            </motion.div>
             <div className="absolute -top-6 -left-6 h-24 w-24 rounded-2xl bg-brand-ice border border-brand/20 -z-10" />
           </motion.div>
 
