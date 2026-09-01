@@ -11,6 +11,22 @@ import {
 import highlighterLogo from "@/assets/imagens/logo/HIGHLIGHTER-LOGO.png";
 import { useLanguage } from "@/lib/i18n";
 
+// TODO: adicionar URLs reais do Facebook e WhatsApp quando disponíveis.
+const SOCIAL_LINKS = [
+  {
+    name: "LinkedIn",
+    Icon: Linkedin,
+    href: "https://www.linkedin.com/company/highlighter-lda/",
+  },
+  {
+    name: "Instagram",
+    Icon: Instagram,
+    href: "https://www.instagram.com/highlightergroup",
+  },
+  { name: "Facebook", Icon: Facebook, href: "#" },
+  { name: "WhatsApp", Icon: MessageCircle, href: "#" },
+];
+
 export function Footer() {
   const { t } = useLanguage();
   return (
@@ -32,14 +48,18 @@ export function Footer() {
               {t.footer.description}
             </p>
             <div className="mt-6 flex gap-3">
-              {[Linkedin, Instagram, Facebook, MessageCircle].map((Ic, i) => (
+              {SOCIAL_LINKS.map(({ name, Icon, href }) => (
                 <a
-                  key={i}
-                  // TODO: adicionar URLs reais das redes sociais
-                  href="#"
+                  key={name}
+                  href={href}
+                  {...(href !== "#" && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
+                  aria-label={name}
                   className="h-10 w-10 rounded-full bg-white/10 hover:bg-white hover:text-brand-deep flex items-center justify-center transition-colors"
                 >
-                  <Ic className="h-4 w-4" />
+                  <Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
