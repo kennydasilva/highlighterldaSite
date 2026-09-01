@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Handshake } from "lucide-react";
 
+import { useLanguage } from "@/lib/i18n";
+
 import truckFreightEasy from "@/assets/logotipo/logos_transparentes/TRUCKFREIGTEASY_cropped.png";
 import overview from "@/assets/logotipo/logos_transparentes/OVERVIEW_cropped.png";
 import mozFertilizer from "@/assets/logotipo/logos_transparentes/MOZfERTILIZER_cropped.png";
@@ -35,6 +37,7 @@ const PARTNERS = [
 ];
 
 export function Partners() {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [distance, setDistance] = useState(0);
@@ -57,15 +60,14 @@ export function Partners() {
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-sm font-semibold text-white uppercase tracking-wider">
-              <Handshake className="h-4 w-4" /> Parceiros
+              <Handshake className="h-4 w-4" /> {t.partners.badge}
             </div>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand">
-            Quem Confia em Nós
+            {t.partners.title}
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
-            Trabalhamos lado a lado com operadoras, portos e indústrias de
-            referência em Moçambique e na SADC.
+            {t.partners.subtitle}
           </p>
         </div>
 

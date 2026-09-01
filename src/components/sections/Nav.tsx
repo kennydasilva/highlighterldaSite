@@ -3,8 +3,34 @@ import { motion } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 
 import highlighterLogo from "@/assets/imagens/logo/HIGHLIGHTER-LOGO.png";
+import { useLanguage, type Lang } from "@/lib/i18n";
+
+function LanguageSwitch({ className = "" }: { className?: string }) {
+  const { lang, setLang, t } = useLanguage();
+  const other: Lang = lang === "pt" ? "en" : "pt";
+  return (
+    <button
+      type="button"
+      onClick={() => setLang(other)}
+      aria-label={t.nav.langLabel}
+      className={`inline-flex items-center rounded-full glass text-xs font-semibold overflow-hidden ${className}`}
+    >
+      <span
+        className={`px-3 py-1.5 transition-colors ${lang === "pt" ? "bg-brand text-white" : "text-foreground/70"}`}
+      >
+        PT
+      </span>
+      <span
+        className={`px-3 py-1.5 transition-colors ${lang === "en" ? "bg-brand text-white" : "text-foreground/70"}`}
+      >
+        EN
+      </span>
+    </button>
+  );
+}
 
 export function Nav() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -13,14 +39,7 @@ export function Nav() {
     window.addEventListener("scroll", on);
     return () => window.removeEventListener("scroll", on);
   }, []);
-  const links = [
-    ["Início", "#top"],
-    ["Serviços", "#services"],
-    ["Sobre", "#about"],
-    ["Diferenciais", "#diferenciais"],
-    ["Galeria", "#galeria"],
-    ["Contactos", "#contact"],
-  ];
+  const links = t.nav.links;
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
@@ -53,16 +72,17 @@ export function Nav() {
             ))}
           </nav>
           <div className="flex items-center gap-2">
+            <LanguageSwitch className="hidden sm:inline-flex" />
             <a
               href="#contact"
               className="hidden sm:inline-flex items-center gap-2 rounded-full bg-hero-gradient text-white px-5 py-2.5 text-sm font-semibold shadow-glow-brand transition-all duration-300 hover:scale-105 hover:shadow-elevate"
             >
-              Solicitar Cotação <ArrowRight className="h-4 w-4" />
+              {t.nav.cta} <ArrowRight className="h-4 w-4" />
             </a>
             <button
               onClick={() => setOpen(!open)}
               className="lg:hidden h-10 w-10 inline-flex items-center justify-center rounded-full glass"
-              aria-label="Menu"
+              aria-label={t.nav.menuLabel}
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
@@ -84,6 +104,9 @@ export function Nav() {
                 {l}
               </a>
             ))}
+            <div className="mt-2 px-4">
+              <LanguageSwitch />
+            </div>
           </motion.div>
         )}
       </div>

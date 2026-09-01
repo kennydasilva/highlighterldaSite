@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { Wrench } from "lucide-react";
 
-import { SERVICES } from "@/data/services";
+import { SERVICE_IMAGES } from "@/data/services";
 import { fadeUpStagger } from "@/lib/motion-variants";
+import { useLanguage } from "@/lib/i18n";
 
 const cardVariants = fadeUpStagger(0.08, 0.5);
 
 export function Services() {
+  const { t } = useLanguage();
+  const services = SERVICE_IMAGES.map((s) => ({
+    ...s,
+    ...t.services.items[s.id],
+  }));
+
   return (
     <section id="services" className="py-24 lg:py-32 relative">
       <div className="container mx-auto px-4">
@@ -18,7 +25,7 @@ export function Services() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-sm font-semibold text-white uppercase tracking-wider"
             >
-              <Wrench className="h-4 w-4" /> Nossos Serviços
+              <Wrench className="h-4 w-4" /> {t.services.badge}
             </motion.div>
           </div>
           <motion.h2
@@ -27,16 +34,13 @@ export function Services() {
             viewport={{ once: true }}
             className="text-4xl sm:text-5xl font-bold tracking-tight text-brand"
           >
-            Excelência em logística integrada
+            {t.services.title}
           </motion.h2>
-          <p className="mt-4 text-muted-foreground">
-            Do porto à última milha, oferecemos soluções completas em cada etapa
-            da cadeia logística.
-          </p>
+          <p className="mt-4 text-muted-foreground">{t.services.subtitle}</p>
         </div>
 
         <div className="flex flex-col gap-6">
-          {SERVICES.map((s, i) => (
+          {services.map((s, i) => (
             <motion.a
               key={s.title}
               href="#contact"
@@ -63,7 +67,7 @@ export function Services() {
                   {s.desc}
                 </p>
                 <span className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold backdrop-blur transition-colors group-hover:bg-white group-hover:text-brand-deep">
-                  Saiba mais
+                  {t.services.cardCta}
                 </span>
               </div>
             </motion.a>

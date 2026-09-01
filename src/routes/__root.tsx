@@ -12,6 +12,7 @@ import type { ReactNode } from "react";
 import appCss from "../styles.css?url";
 import heroLocomotiveLift from "../assets/imagens/hero-locomotive-lift.jpg";
 import { LogoIntro } from "../components/LogoIntro";
+import { LanguageProvider } from "../lib/i18n";
 
 const SITE_URL = "https://highlighterlda.com";
 const OG_IMAGE_URL = new URL(heroLocomotiveLift, SITE_URL).toString();
@@ -146,10 +147,12 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <LogoIntro>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-      </LogoIntro>
+      <LanguageProvider>
+        <LogoIntro>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </LogoIntro>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 }

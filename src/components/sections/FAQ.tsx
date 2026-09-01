@@ -2,10 +2,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
 
-import { FAQS } from "@/data/faqs";
 import highlighterLogo from "@/assets/imagens/logo/HIGHLIGHTER-LOGO.png";
+import { useLanguage } from "@/lib/i18n";
 
 export function FAQ() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section className="py-24 bg-brand-ice/40">
@@ -14,14 +15,13 @@ export function FAQ() {
           <div className="flex flex-col">
             <div>
               <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-semibold text-brand-deep uppercase tracking-wider mb-4">
-                FAQ
+                {t.faq.badge}
               </div>
               <h2 className="text-4xl sm:text-5xl font-bold tracking-tight text-brand">
-                Perguntas Frequentes
+                {t.faq.title}
               </h2>
               <p className="mt-4 text-muted-foreground text-left">
-                Informações importantes sobre as nossas operações logísticas,
-                envio, entrega e segurança.
+                {t.faq.subtitle}
               </p>
             </div>
             <div className="hidden lg:flex flex-1 items-center justify-center">
@@ -33,7 +33,7 @@ export function FAQ() {
             </div>
           </div>
           <div className="space-y-3">
-            {FAQS.map(([q, a], i) => (
+            {t.faq.items.map(([q, a], i) => (
               <div
                 key={i}
                 className="rounded-3xl bg-white border border-border overflow-hidden hover:border-brand/30 transition-colors duration-300"

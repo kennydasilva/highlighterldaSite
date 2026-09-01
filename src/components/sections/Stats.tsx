@@ -2,15 +2,13 @@ import { motion } from "framer-motion";
 
 import { Counter } from "@/components/Counter";
 import { fadeUpStagger } from "@/lib/motion-variants";
+import { useLanguage } from "@/lib/i18n";
 
 const statVariants = fadeUpStagger(0.1, 0.3);
 
 export function Stats() {
-  const stats = [
-    { n: 13, s: "+", l: "Anos" },
-    { n: 100, s: "+", l: "Projectos" },
-    { n: 50, s: "+", l: "Especialistas" },
-  ];
+  const { t } = useLanguage();
+  const stats = t.stats.items;
   return (
     <section className="py-20 relative overflow-hidden bg-brand-soft-gradient text-white">
       <div className="absolute inset-0 bg-grid opacity-20" />

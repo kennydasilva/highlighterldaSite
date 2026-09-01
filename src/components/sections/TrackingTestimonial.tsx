@@ -3,10 +3,12 @@ import { ArrowRight } from "lucide-react";
 
 import highlighterLogo from "@/assets/imagens/logo/HIGHLIGHTER-LOGO.png";
 import { MozambiqueMap } from "@/components/MozambiqueMap";
-import { TESTIMONIALS } from "@/data/testimonials";
+import { TESTIMONIAL_PHOTO } from "@/data/testimonials";
+import { useLanguage } from "@/lib/i18n";
 
 export function TrackingTestimonial() {
-  const testimonial = TESTIMONIALS[0];
+  const { t } = useLanguage();
+  const testimonial = t.trackingTestimonial.testimonial;
 
   return (
     <section className="py-24 lg:py-32">
@@ -24,20 +26,19 @@ export function TrackingTestimonial() {
             <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
             <div className="relative">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider mb-4 backdrop-blur">
-                Cobertura nacional
+                {t.trackingTestimonial.badge}
               </div>
               <h2 className="text-4xl sm:text-5xl font-bold">
-                Presentes em todo o Moçambique
+                {t.trackingTestimonial.title}
               </h2>
               <p className="mt-4 text-white/85 max-w-md">
-                De Maputo a Pemba, ligamos portos, ferrovias e indústrias com
-                operações coordenadas e visibilidade total em cada etapa.
+                {t.trackingTestimonial.subtitle}
               </p>
               <a
                 href="#services"
                 className="mt-8 rounded-full bg-white text-brand-deep px-7 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:bg-brand-ice inline-flex items-center justify-center gap-2"
               >
-                Ver os nossos serviços <ArrowRight className="h-4 w-4" />
+                {t.trackingTestimonial.cta} <ArrowRight className="h-4 w-4" />
               </a>
             </div>
 
@@ -49,7 +50,7 @@ export function TrackingTestimonial() {
           {/* Testemunho */}
           <div className="relative min-h-[480px] lg:min-h-0">
             <img
-              src={testimonial.photo}
+              src={TESTIMONIAL_PHOTO}
               alt={testimonial.name}
               className="absolute inset-0 h-full w-full object-cover object-top"
             />

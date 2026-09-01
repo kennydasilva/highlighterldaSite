@@ -1,6 +1,9 @@
 import { Mail, Phone } from "lucide-react";
 
+import { useLanguage } from "@/lib/i18n";
+
 export function CTA() {
+  const { t } = useLanguage();
   return (
     <section id="contact" className="py-24">
       <div className="container mx-auto px-4">
@@ -9,15 +12,13 @@ export function CTA() {
           <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-80 w-80 rounded-full bg-white/15 blur-3xl" />
           <div className="relative max-w-3xl mx-auto">
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.15]">
-              Precisa de uma operação{" "}
-              <span className="text-brand-deep">mais eficiente e segura?</span>
+              {t.cta.titleLine1}{" "}
+              <span className="text-brand-deep">{t.cta.titleHighlight}</span>
             </h2>
             <p className="mt-6 text-white/80 text-lg text-left">
-              A Highlighter Group oferece soluções inteligentes em transporte,
-              logística e serviços ferro-portuários e industriais. Fale
-              connosco e receba uma proposta feita à medida da sua operação.
+              {t.cta.paragraph}
             </p>
-           
+
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <a
                 href="tel:+258841411118"
@@ -29,7 +30,7 @@ export function CTA() {
                 href="mailto:comercial@highlighter.co.mz"
                 className="inline-flex items-center gap-3 rounded-full border border-white/40 px-8 py-4 font-semibold transition-all duration-300 hover:scale-105 hover:bg-white/10"
               >
-                <Mail className="h-5 w-5" /> Solicitar cotação
+                <Mail className="h-5 w-5" /> {t.cta.emailCta}
               </a>
             </div>
           </div>

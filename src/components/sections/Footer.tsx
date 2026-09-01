@@ -9,8 +9,10 @@ import {
 } from "lucide-react";
 
 import highlighterLogo from "@/assets/imagens/logo/HIGHLIGHTER-LOGO.png";
+import { useLanguage } from "@/lib/i18n";
 
 export function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-brand-soft-gradient text-white pt-20 pb-8 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid opacity-10" />
@@ -27,8 +29,7 @@ export function Footer() {
               />
             </h3>
             <p className="text-white/70 text-sm leading-relaxed">
-              Empresa moçambicana com mais de 13 anos em logística integrada e
-              inteligente.
+              {t.footer.description}
             </p>
             <div className="mt-6 flex gap-3">
               {[Linkedin, Instagram, Facebook, MessageCircle].map((Ic, i) => (
@@ -45,16 +46,12 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-bold mb-4">Serviços</h4>
-           
+            <h4 className="font-display font-bold mb-4">
+              {t.footer.servicesTitle}
+            </h4>
+
             <ul className="space-y-2 text-sm text-white/70">
-              {[
-                "Operações Portuárias",
-                "Estiva",
-                "Agribusiness",
-                "Logística Integrada",
-                "Ferroportuário",
-              ].map((s) => (
+              {t.footer.services.map((s) => (
                 <li key={s}>
                   <a
                     href="#services"
@@ -68,33 +65,24 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display font-bold mb-4">Empresa</h4>
+            <h4 className="font-display font-bold mb-4">
+              {t.footer.companyTitle}
+            </h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li>
-                <a href="#top" className="hover:text-white">
-                  Início
-                </a>
-              </li>
-              <li>
-                <a href="#about" className="hover:text-white">
-                  Sobre Nós
-                </a>
-              </li>
-              <li>
-                <a href="#services" className="hover:text-white">
-                  Serviços
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:text-white">
-                  Contactos
-                </a>
-              </li>
+              {t.footer.companyLinks.map(([label, href]) => (
+                <li key={href}>
+                  <a href={href} className="hover:text-white">
+                    {label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h4 className="font-display font-bold mb-4">Contactos</h4>
+            <h4 className="font-display font-bold mb-4">
+              {t.footer.contactsTitle}
+            </h4>
             <ul className="space-y-3 text-sm text-white/80">
               <li className="flex items-start gap-3">
                 <Phone className="h-4 w-4 mt-0.5 text-white" />
@@ -106,15 +94,15 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-0.5 text-white" />
-                Rua 24 de Julho, Q 25, Nº131, Cidade da Matola
+                {t.footer.addressLine}
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-16 pt-6 border-t border-white/10 text-center text-sm text-white/60">
-          © {new Date().getFullYear()} Highlighter Lda · Logística, Excelência e
-          Segurança
+          © {new Date().getFullYear()} Highlighter Lda ·{" "}
+          {t.footer.copyrightSuffix}
         </div>
       </div>
     </footer>

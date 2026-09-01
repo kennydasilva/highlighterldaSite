@@ -5,8 +5,10 @@ import { ArrowRight } from "lucide-react";
 import heroLocomotiveLift from "@/assets/imagens/hero-locomotive-lift.jpg";
 import { Tilt } from "@/components/Tilt";
 import { PREMIUM_EASE } from "@/lib/motion-variants";
+import { useLanguage } from "@/lib/i18n";
 
 export function Hero() {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -29,7 +31,7 @@ export function Hero() {
               transition={{ duration: 0.6 }}
               className="text-xs font-semibold uppercase tracking-[0.2em] text-brand mb-5"
             >
-              Operadora logística em Moçambique e SADC
+              {t.hero.eyebrow}
             </motion.p>
 
             <motion.h1
@@ -38,8 +40,8 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.1, ease: PREMIUM_EASE }}
               className="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.15] tracking-tight text-brand"
             >
-              "Soluções inteligentes <br />
-              para grandes operações"
+              {t.hero.titleLine1} <br />
+              {t.hero.titleLine2}
             </motion.h1>
 
             <motion.p
@@ -48,7 +50,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.25, ease: PREMIUM_EASE }}
               className="mt-6 text-lg text-muted-foreground max-w-xl"
             >
-              Logística, Serviços Ferro-Portuários e Soluções Industriais.
+              {t.hero.subtitle}
             </motion.p>
 
             <motion.div
@@ -61,14 +63,14 @@ export function Hero() {
                 href="#contact"
                 className="group inline-flex items-center gap-3 rounded-full bg-hero-gradient text-white px-7 py-4 font-semibold shadow-glow-brand transition-all duration-300 hover:scale-105 hover:shadow-elevate"
               >
-                Solicitar Cotação
+                {t.hero.ctaPrimary}
                 <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <a
                 href="#services"
                 className="inline-flex items-center gap-2 rounded-full border border-brand-deep/20 px-7 py-4 font-semibold text-brand-deep transition-all duration-300 hover:scale-105 hover:bg-brand-ice"
               >
-                Ver Serviços
+                {t.hero.ctaSecondary}
               </a>
             </motion.div>
 
@@ -78,11 +80,7 @@ export function Hero() {
               transition={{ delay: 0.6 }}
               className="mt-10 grid grid-cols-3 gap-4 max-w-md"
             >
-              {[
-                ["13+", "Anos"],
-                ["100+", "Projectos"],
-                ["50+", "Especialistas"],
-              ].map(([n, l]) => (
+              {t.hero.stats.map(([n, l]) => (
                 <div key={l}>
                   <div className="text-3xl font-bold text-brand">{n}</div>
                   <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">
@@ -104,7 +102,7 @@ export function Hero() {
               <Tilt className="relative rounded-3xl overflow-hidden shadow-elevate aspect-[4/5] sm:aspect-[5/6]">
                 <motion.img
                   src={heroLocomotiveLift}
-                  alt="Locomotiva a ser transportada em operação de carga especial"
+                  alt={t.hero.imageAlt}
                   style={{ y: parallaxY }}
                   className="w-full h-[115%] scale-110 object-cover"
                   width={1200}

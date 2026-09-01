@@ -1,14 +1,8 @@
+import { useLanguage } from "@/lib/i18n";
+
 export function Marquee() {
-  const items = [
-    "Segurança Operacional",
-    "Eficiência & Qualidade",
-    "Logística Integrada",
-    "Soluções Sustentáveis",
-    "Fornecimento Confiável",
-    "Conformidade & Segurança",
-    "Entrega no Prazo",
-  ];
-  const row = [...items, ...items];
+  const { t } = useLanguage();
+  const row = [...t.marquee.items, ...t.marquee.items];
   return (
     <section className="py-8 border-y border-border bg-brand-soft-gradient text-white overflow-hidden">
       <div className="flex animate-marquee gap-12 whitespace-nowrap">

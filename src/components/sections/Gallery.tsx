@@ -3,12 +3,11 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Images, X, ZoomIn } from "lucide-react";
 
-import { FEATURED_PROJECT, OTHER_PROJECT_PHOTOS } from "@/data/gallery";
+import { FEATURED_PROJECT_PHOTOS, OTHER_PROJECT_PHOTOS } from "@/data/gallery";
 import { fadeUpStagger } from "@/lib/motion-variants";
+import { useLanguage } from "@/lib/i18n";
 
 const cardVariants = fadeUpStagger(0.06, 0.4);
-
-const ALL_PHOTOS = [...FEATURED_PROJECT.photos, ...OTHER_PROJECT_PHOTOS];
 
 // Padrão puramente visual (bento) para variar o tamanho dos blocos — não
 // reflete qualquer ordem de importância das fotografias.
@@ -25,6 +24,17 @@ const OTHER_PHOTO_SPANS = [
 ];
 
 export function Gallery() {
+  const { t } = useLanguage();
+  const featuredPhotos = FEATURED_PROJECT_PHOTOS.map((src, i) => ({
+    src,
+    alt: t.gallery.featured.photosAlt[i],
+  }));
+  const otherPhotos = OTHER_PROJECT_PHOTOS.map((src, i) => ({
+    src,
+    alt: t.gallery.otherPhotosAlt[i],
+  }));
+  const ALL_PHOTOS = [...featuredPhotos, ...otherPhotos];
+
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const activeItem = activeIndex !== null ? ALL_PHOTOS[activeIndex] : null;
 
@@ -47,7 +57,7 @@ export function Gallery() {
   }, [activeIndex]);
 
   const featuredIndexOffset = 0;
-  const otherIndexOffset = FEATURED_PROJECT.photos.length;
+  const otherIndexOffset = featuredPhotos.length;
 
   return (
     <section
@@ -64,7 +74,7 @@ export function Gallery() {
               viewport={{ once: true }}
               className="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2 text-sm font-semibold text-white uppercase tracking-wider"
             >
-              <Images className="h-4 w-4" /> Galeria de Projectos
+              <Images className="h-4 w-4" /> {t.gallery.badge}
             </motion.div>
           </div>
         </div>
@@ -82,16 +92,16 @@ export function Gallery() {
             <div className="absolute -top-24 -left-24 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
             <div className="relative">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider mb-4 backdrop-blur w-fit">
-                Projecto em Destaque
+                {t.gallery.featuredBadge}
               </div>
               <h3 className="text-3xl sm:text-4xl font-bold">
-                {FEATURED_PROJECT.title}
+                {t.gallery.featured.title}
               </h3>
               <p className="mt-4 text-white/85 leading-relaxed">
-                {FEATURED_PROJECT.paragraph1}
+                {t.gallery.featured.paragraph1}
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
-                {FEATURED_PROJECT.stats.map((stat) => (
+                {t.gallery.featured.stats.map((stat) => (
                   <div
                     key={stat.label}
                     className="rounded-2xl bg-white/10 backdrop-blur px-4 py-4"
@@ -106,13 +116,13 @@ export function Gallery() {
                 ))}
               </div>
               <p className="mt-6 text-sm text-white/70 leading-relaxed">
-                {FEATURED_PROJECT.paragraph2}
+                {t.gallery.featured.paragraph2}
               </p>
             </div>
           </div>
 
           <div className="grid grid-cols-2 gap-1.5 sm:gap-2 p-1.5 sm:p-2">
-            {FEATURED_PROJECT.photos.map((photo, i) => (
+            {featuredPhotos.map((photo, i) => (
               <button
                 key={photo.src}
                 type="button"
@@ -141,10 +151,10 @@ export function Gallery() {
             viewport={{ once: true }}
             className="text-2xl sm:text-3xl font-bold tracking-tight text-brand text-center mb-8"
           >
-            Outros Projectos
+            {t.gallery.otherProjectsTitle}
           </motion.h3>
           <div className="grid grid-cols-2 md:grid-cols-4 grid-flow-dense auto-rows-[150px] sm:auto-rows-[180px] lg:auto-rows-[210px] gap-3 sm:gap-4">
-            {OTHER_PROJECT_PHOTOS.map((photo, i) => (
+            {otherPhotos.map((photo, i) => (
               <motion.button
                 key={photo.src}
                 type="button"
@@ -182,11 +192,11 @@ export function Gallery() {
             onOpenAutoFocus={(e) => e.preventDefault()}
           >
             <DialogPrimitive.Title className="sr-only">
-              {activeItem?.alt ?? "Galeria de projectos"}
+              {activeItem?.alt ?? t.gallery.defaultDialogTitle}
             </DialogPrimitive.Title>
             <DialogPrimitive.Close className="absolute right-4 top-4 sm:right-6 sm:top-6 rounded-full bg-white/10 p-2.5 text-white transition-colors hover:bg-white/20 cursor-pointer">
               <X className="h-5 w-5" />
-              <span className="sr-only">Fechar</span>
+              <span className="sr-only">{t.gallery.closeLabel}</span>
             </DialogPrimitive.Close>
 
             {ALL_PHOTOS.length > 1 && (
@@ -197,7 +207,7 @@ export function Gallery() {
                   className="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2.5 sm:p-3 text-white transition-colors hover:bg-white/20 cursor-pointer"
                 >
                   <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
-                  <span className="sr-only">Anterior</span>
+                  <span className="sr-only">{t.gallery.prevLabel}</span>
                 </button>
                 <button
                   type="button"
@@ -205,7 +215,7 @@ export function Gallery() {
                   className="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 rounded-full bg-white/10 p-2.5 sm:p-3 text-white transition-colors hover:bg-white/20 cursor-pointer"
                 >
                   <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
-                  <span className="sr-only">Seguinte</span>
+                  <span className="sr-only">{t.gallery.nextLabel}</span>
                 </button>
               </>
             )}
