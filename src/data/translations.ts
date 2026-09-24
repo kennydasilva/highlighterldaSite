@@ -98,7 +98,7 @@ const pt = {
     },
     values: {
       title: "Valores",
-      text: "Garantir eficiência operacional, segurança e cumprimento rigoroso de normas, e assegurar a execução fiável e organizada de cada serviço prestado.",
+      text: "Bem-estar da pessoa humana, colaboradores, parceiros e outros.",
     },
     skills: [
       { label: "Logística Integrada", value: 98 },
@@ -350,7 +350,7 @@ const en = {
     },
     values: {
       title: "Values",
-      text: "Ensuring operational efficiency, safety and strict compliance with standards, and guaranteeing the reliable, organised execution of every service delivered.",
+      text: "Well-being of the human person, employees, partners and others.",
     },
     skills: [
       { label: "Integrated Logistics", value: 98 },
